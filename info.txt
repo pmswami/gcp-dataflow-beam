@@ -26,3 +26,16 @@ Flow of Beam Programming Model
     Output = text file, in memory,. hdfs, gfs, stream, (kafka/pub-sub)
     Transform = Data tranformation methods
 
+Basic Terminologies
+    1. Pipeline = A pipeline encapsulates entire data processing task, from start to finish. Includes reading data, transforming that data, and writing output data.
+    2. Pcollection = A PCollection is equivalent to RDD in Spark. It represents a distributed dataset that our Beam pipeline operates on.
+    3. PTransform = A PTransform represents a data processing operation, or a step, in our pipeline. Ex. ParDo, filter, flatten, combine, etc.
+
+PCollection Charactestics
+    1. Immutability = PCollections are immutable in nature. Applying a transf0rmation on PCollection results in creation of new PCollection.
+    2. Element Type = The elements in a PCollection may be of any type, but all must be of same type.
+    3. Operation Type = PCollections does not support grained operations. We cannot apply transformations on some spe3cific elements in a PCollection.
+    4. TimeStamps = Each element in a PCollection has an associated timestamp with it.
+        Unbounded PCollections => Source assign the timestamp.
+        Bounded PCollections => Every element is set to same timestamp.
+
