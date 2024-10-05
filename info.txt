@@ -4,3 +4,25 @@ Apache Beam
     - Beam => Batch + Stream
     - first introduced in 2016
     - github repo => https://github.com/apache/beam
+
+Supported SDKs
+    1. Java
+    2. Python
+    3. Go
+    4. Other
+
+Runners/Executors
+    1. Spark
+    2. Flink
+    3. Apex
+    4. Dataflow
+    5. Samza
+    6. Other
+
+Flow of Beam Programming Model
+    Input => PCollection => Output
+
+    Input = text files, log files, database, stream(kafka/pub-sub)
+    Output = text file, in memory,. hdfs, gfs, stream, (kafka/pub-sub)
+    Transform = Data tranformation methods
+
