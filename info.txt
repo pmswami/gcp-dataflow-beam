@@ -1,0 +1,6 @@
+Apache Beam
+    - Unified Programming Lanuage
+    - used for portable big data processing, supported by frameworks like Psark, Flink, Apex, Cloud Dataflow, etc.
+    - Beam => Batch + Stream
+    - first introduced in 2016
+    - github repo => https://github.com/apache/beam
