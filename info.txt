@@ -39,3 +39,13 @@ PCollection Charactestics
         Unbounded PCollections => Source assign the timestamp.
         Bounded PCollections => Every element is set to same timestamp.
 
+Read Transform
+    1. ReadFromText() => parses textfile as newline delimited elements i.e., it reads the file line by line and every line is single element in PCollection. (https://beam.apache.org/releases/pydoc/2.2.0/apache_beam.io.textio.html#:~:text=A%20PTransform%20for%20reading%20text%20files.%20Parses%20a%20text%20file)
+
+    2. ReadFrmAvro() => Used to read Avro File (https://beam.apache.org/releases/pydoc/2.2.0/apache_beam.io.avroio.html)
+
+    3. ReadFromParquet() => Used to read parquet file (https://beam.apache.org/releases/pydoc/2.25.0/apache_beam.io.parquetio.html#:~:text=Initializes%20ReadFromParquet.%20Uses%20source%20_ParquetSource%20to%20read%20a%20set%20of)
+
+    4. ReadFromTFRecord() => Used to read TensorFlow records.(https://beam.apache.org/releases/pydoc/2.36.0/apache_beam.io.tfrecordio.html#:~:text=apache_beam.io.tfrecordio%20module%20%C2%B6.%20TFRecord%20sources%20and%20sinks.%20class)
+
+    5. ReadFromPubSub() => Used to read messages from Google PubSub Service (https://beam.apache.org/releases/pydoc/2.5.0/apache_beam.io.gcp.pubsub.html#:~:text=Beam%20users%20should%20not%20directly%20construct%20PubsubMessages.%20class)
