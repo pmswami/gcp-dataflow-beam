@@ -76,4 +76,8 @@ Transforms
 
     6. Partition => Separates elements in a collection into multiple output collections. The partitioning function contains the logic that determines how to separate the elements of the input collection into each resulting partition output collection. The number of partitions must be determined at graph construction time. You cannot determine the number of partitions in mid-pipeline.(https://beam.apache.org/documentation/transforms/python/elementwise/partition/)
 
+    7. ParDo => A transform for generic parallel processing. A ParDo transform considers each element in the input PCollection, performs some processing function (your user code) on that element, and emits zero or more elements to an output PCollection. (https://beam.apache.org/documentation/transforms/python/elementwise/pardo/#:~:text=A%20transform%20for%20generic%20parallel%20processing.%20A%20ParDo%20transform%20considers#:~:text=A%20transform%20for%20generic%20parallel%20processing.%20A%20ParDo%20transform%20considers)
+    DoFn => DoFn is a Beam class that defines a distributed processing function. It contains all the logic to run the user provided function parallely on different machines. (https://beam.apache.org/documentation/transforms/python/elementwise/pardo/#example-3-pardo-with-dofn-methods)
+
 Branching Pipelines (https://beam.apache.org/documentation/pipelines/design-your-pipeline/#:~:text=The%20pipeline%20in%20figure%202%20is%20a%20branching%20pipeline.%20The)
+
