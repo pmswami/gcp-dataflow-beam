@@ -60,3 +60,19 @@ Write Transform
     4. WriteToTFRecord() => Writes each element of the PCollection to Tensorflow records. (https://beam.apache.org/releases/pydoc/2.36.0/apache_beam.io.tfrecordio.html#:~:text=Transform%20for%20reading%20TFRecord%20sources.%20Initialize%20a%20ReadFromTFRecord%20transform.)
 
     5. WriteToPubSub() => Writes each element of the PCollection to Google cloud PubSub Service (https://beam.apache.org/releases/pydoc/2.8.0/_modules/apache_beam/io/gcp/pubsub.html#:~:text=class%20WriteToPubSub%20(PTransform):%20%22%22%22A%20%60%60PTransform%60%60%20for%20writing%20messages%20to)
+
+Transforms
+    1. Map => Applies a simple 1-to-1 mapping function over each element in the collection.(https://beam.apache.org/documentation/transforms/python/elementwise/map/)
+
+    2. FlatMap => Applies a simple 1-to-many mapping function over each element in the collection. The many elements are flattened into the resulting collection. (https://beam.apache.org/documentation/transforms/python/elementwise/flatmap/)
+
+    3. Filter => Given a predicate, filter out all elements that don’t satisfy that predicate. May also be used to filter based on an inequality with a given value based on the comparison ordering of the element.(https://beam.apache.org/documentation/transforms/python/elementwise/filter/)
+
+    3. Keys => Takes a collection of key-value pairs and returns the key of each element. (https://beam.apache.org/documentation/transforms/python/elementwise/keys/)
+
+    4. KvSwap => Takes a collection of key-value pairs and returns a collection of key-value pairs which has each key and value swapped. (https://beam.apache.org/documentation/transforms/python/elementwise/kvswap/)
+
+    5. ParDo => A transform for generic parallel processing. A ParDo transform considers each element in the input PCollection, performs some processing function (your user code) on that element, and emits zero or more elements to an output PCollection. (https://beam.apache.org/documentation/transforms/python/elementwise/pardo/)
+
+    6. Partition => Separates elements in a collection into multiple output collections. The partitioning function contains the logic that determines how to separate the elements of the input collection into each resulting partition output collection. The number of partitions must be determined at graph construction time. You cannot determine the number of partitions in mid-pipeline.(https://beam.apache.org/documentation/transforms/python/elementwise/partition/)
+
