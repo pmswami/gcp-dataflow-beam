@@ -76,3 +76,4 @@ Transforms
 
     6. Partition => Separates elements in a collection into multiple output collections. The partitioning function contains the logic that determines how to separate the elements of the input collection into each resulting partition output collection. The number of partitions must be determined at graph construction time. You cannot determine the number of partitions in mid-pipeline.(https://beam.apache.org/documentation/transforms/python/elementwise/partition/)
 
+Branching Pipelines (https://beam.apache.org/documentation/pipelines/design-your-pipeline/#:~:text=The%20pipeline%20in%20figure%202%20is%20a%20branching%20pipeline.%20The)
