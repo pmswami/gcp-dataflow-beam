@@ -102,3 +102,32 @@ Side Inputs => (https://beam.apache.org/documentation/patterns/side-inputs/#:~:t
 
 Additional Outputs in pipelines =>
     - https://beam.apache.org/releases/pydoc/2.3.0/apache_beam.pvalue.html#:~:text=An%20object%20representing%20a%20tagged%20value.%20ParDo,%20Map,%20and%20FlatMap
+
+
+Type Hints in Apache Beam =>
+    1. Inline : Provided during pipeline construction(on Transforms). using with_input_types()
+    2. Outline: Provided as properties of the DoFn using decorators. using with_output_types()
+
+    Type Safety: Type safety is prevention of typed errors in a programmi8ng language where type error means when someone attempts to perform an operation on a value that does not support that operation.
+
+    https://beam.apache.org/releases/pydoc/2.33.0/apache_beam.typehints.typehints.html#:~:text=This%20module%20defines%20type-hinting%20objects%20and%20the%20corresponding%20syntax%20for
+
+    https://beam.apache.org/releases/pydoc/2.33.0/apache_beam.typehints.decorators.html
+
+
+    1. Simple TypeHint: Includes primitive types like int, str, user defined classes.
+    2. Parameterized TypeHint: Includes nested types, basically for container Python objects. Ex. List, Tuple, List[Tuple[int, str, str]]
+    3. Special TypeHint: Includes those special types which were introduced in PEP 484 like Any, Union, Optional
+
+
+Data Encoding in Beam =>
+    - Coders: Encode and decode the elements of a PCollection.
+    - Coders does not necessarily have have 1 to 1 relationaship with types.
+    - CoderRegistry maps the types to their default coder.
+
+        Python Type         Default Coder
+        int                 VarIntCoder
+        float               FloatCoder
+        str                 BytesCoder
+        bytes               StrUtf8Coder
+        Tuple               TupleCoder
