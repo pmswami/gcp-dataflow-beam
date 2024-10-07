@@ -88,3 +88,6 @@ Combiner => Combiner is a mini reducer which does the reduce task locally to a m
         merge_accumulator - Merges all machines accumulators into single one. In our case all the (sum, count) from various machines are gatheredf and summed up.
         extract_output - Performs the final computation on merge_accumulator's result. Called only once on the merge_accumulator's result.
 
+CoGroupByKey() =>
+    - Relational join of two or more PCollections.
+    - Accepts a dictionary of key/value PCollections and output a single PCollection containing 1 key/value tuple for each key in the input PCollections.
