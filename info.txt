@@ -131,3 +131,15 @@ Data Encoding in Beam =>
         str                 BytesCoder
         bytes               StrUtf8Coder
         Tuple               TupleCoder
+
+
+Streaming Data Pipelines in Beam =>
+    - DataSource: Kafka, pubsub, etc.
+    - Google Cloud PubSub: It is fully managed real-time messaging service which allow you to send and receive the messages efficiently between the applications and services. Contains Publisher, Topic, Subscription, Message, Subscriber.
+    - Advantages:
+        1. Ensure at least once delivery.
+        2. Ensures exactly once processing.
+        3. Less point of failures.
+        4. Easily scalable.
+        5. Support millions of injestion of messages.
+        6. Integration with other GCP services.
