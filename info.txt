@@ -95,3 +95,7 @@ CoGroupByKey() => (https://beam.apache.org/documentation/transforms/python/aggre
     - Relational join of two or more PCollections.
     - Accepts a dictionary of key/value PCollections and output a single PCollection containing 1 key/value tuple for each key in the input PCollections.
     - Aggregates all input elements by their key and allows downstream processing to consume all values associated with the key. While GroupByKey performs this operation over a single input collection and thus a single type of input values, CoGroupByKey operates over multiple input collections. As a result, the result for each key is a tuple of the values associated with that key in each input collection.
+
+Side Inputs => (https://beam.apache.org/documentation/patterns/side-inputs/#:~:text=The%20samples%20on%20this%20page%20show%20you%20common%20Beam%20side)
+    - Additional data provided to a DoFn object.
+    - Can be provided to ParDo or its child Transfo0rms(Map, FlatMap)
