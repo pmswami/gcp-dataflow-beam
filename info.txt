@@ -99,3 +99,6 @@ CoGroupByKey() => (https://beam.apache.org/documentation/transforms/python/aggre
 Side Inputs => (https://beam.apache.org/documentation/patterns/side-inputs/#:~:text=The%20samples%20on%20this%20page%20show%20you%20common%20Beam%20side)
     - Additional data provided to a DoFn object.
     - Can be provided to ParDo or its child Transfo0rms(Map, FlatMap)
+
+Additional Outputs in pipelines =>
+    - https://beam.apache.org/releases/pydoc/2.3.0/apache_beam.pvalue.html#:~:text=An%20object%20representing%20a%20tagged%20value.%20ParDo,%20Map,%20and%20FlatMap
