@@ -39,6 +39,8 @@ PCollection Charactestics
         Unbounded PCollections => Source assign the timestamp.
         Bounded PCollections => Every element is set to same timestamp.
 
+Transforms => (https://beam.apache.org/documentation/transforms/python/overview/)
+
 Read Transform
     1. ReadFromText() => parses textfile as newline delimited elements i.e., it reads the file line by line and every line is single element in PCollection. (https://beam.apache.org/releases/pydoc/2.2.0/apache_beam.io.textio.html#:~:text=A%20PTransform%20for%20reading%20text%20files.%20Parses%20a%20text%20file)
 
@@ -81,13 +83,15 @@ Transforms
 
 Branching Pipelines (https://beam.apache.org/documentation/pipelines/design-your-pipeline/#:~:text=The%20pipeline%20in%20figure%202%20is%20a%20branching%20pipeline.%20The)
 
-Combiner => Combiner is a mini reducer which does the reduce task locally to a mapper machine
-    List of Combiner Methods =>
-        Create_accumulator - Creates a new local accumulator in each machine . Keeps a record of (sum, count).
-        add_input - Adds an input element to accumulator, returning new (sum, count) value.
-        merge_accumulator - Merges all machines accumulators into single one. In our case all the (sum, count) from various machines are gatheredf and summed up.
-        extract_output - Performs the final computation on merge_accumulator's result. Called only once on the merge_accumulator's result.
+Combiner => (https://beam.apache.org/documentation/transforms/python/aggregation/combineperkey/)
+    - Combiner is a mini reducer which does the reduce task locally to a mapper machine
+        -List of Combiner Methods =>
+            Create_accumulator - Creates a new local accumulator in each machine . Keeps a record of (sum, count).
+            add_input - Adds an input element to accumulator, returning new (sum, count) value.
+            merge_accumulator - Merges all machines accumulators into single one. In our case all the (sum, count) from various machines are gatheredf and summed up.
+            extract_output - Performs the final computation on merge_accumulator's result. Called only once on the merge_accumulator's result.
 
-CoGroupByKey() =>
+CoGroupByKey() => (https://beam.apache.org/documentation/transforms/python/aggregation/cogroupbykey/#:~:text=CoGroupByKey.%20Pydoc.%20Aggregates%20all%20input%20elements%20by%20their%20key%20and)
     - Relational join of two or more PCollections.
     - Accepts a dictionary of key/value PCollections and output a single PCollection containing 1 key/value tuple for each key in the input PCollections.
+    - Aggregates all input elements by their key and allows downstream processing to consume all values associated with the key. While GroupByKey performs this operation over a single input collection and thus a single type of input values, CoGroupByKey operates over multiple input collections. As a result, the result for each key is a tuple of the values associated with that key in each input collection.
